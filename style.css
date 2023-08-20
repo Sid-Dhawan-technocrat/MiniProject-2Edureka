@@ -1,3 +1,13 @@
+/* .user-data{
+  overflow:hidden;
+}
+
+.card{
+  margin-left:30%;
+  border:10px solid black;
+  width:30rem;
+  opacity:0.5
+} */
 * {
   box-sizing: border-box;
 }
@@ -60,13 +70,14 @@ input[type=submit] {
   color: #ffffff; 
 }
 
-.user-data{
-  overflow:hidden;
+#myInput{
+  width:70%;
 }
 
 .card{
-  margin-left:30%;
+  margin:2% 30%;
   border:10px solid black;
   width:30rem;
-  opacity:0.5
+  opacity:0.7;
+
 }

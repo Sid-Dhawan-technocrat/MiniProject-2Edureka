@@ -1,39 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather app</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<script src="script.js"></script>
-</head>     
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
 <body>
 
-    <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">My city weather tracker</h5>
-          <p class="card-text">Get the real time data regarding the weather of your city</p>
-          <form autocomplete="off" action="/action_page.php" class="user-data">
-            <div class="autocomplete" style="width:300px;">
-              <input id="myInput" type="text" name="myCountry" placeholder="Country">
-            </div>
-            <input type="submit" id="solicit-weather">
-          </form>
-        </div>
-      </div>
 <!--Make sure the form has the autocomplete function switched off:-->
 
-
-</div>
-
+<div class="card" style="width: 18rem;">
+   
+    <div class="card-body">
+        <h6 class="card-title">
+            Enter the city name
+        <form autocomplete="off" action="/action_page.php" class="userData" onsubmit="getFormValue(event)">
+            <div class="autocomplete" style="width:300px;">
+              <input id="myInput" type="text" name="myCountry" placeholder="Country"
+              class="City-teller">
+            </div>
+            <input type="submit" value="submit">
+          </form>
+            <p id="out"></p>
+            <p id="location"></p>
+            <p id="weather"></p>
+        </h6>
+          <div class="card-text">
+            
+          </div>
+    </div>
+  </div>
 </body>
+<script src="script.js"></script>
 
 </html>
-
-
-
 
 
 
