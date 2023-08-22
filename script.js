@@ -123,8 +123,7 @@ function getFormValue(e){
         //x.innerText
         y.innerText=`Temp of the day for ${getCityName} is ${(res.main.temp-273.15).toFixed(2)}deg Celcius`;
         z.innerText=`Wind speed is ${res.wind.speed}m/sec`;
-        document.body.style.backgroundImage =
-      "url('https://source.unsplash.com/1600x900/?" +getCityName + "')";
+        document.body.style.backgroundImage ="url('https://source.unsplash.com/1600x900/?" +getCityName + "')";
   })}
         //z.innerText=``
     
