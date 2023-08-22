@@ -18,6 +18,7 @@ function autocomplete(inp, arr) {
         /*for each item in the array...*/
         for (i = 0; i < arr.length; i++) {
           /*check if the item starts with the same letters as the text field value:*/
+          
           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
             /*create a DIV element for each matching element:*/
             b = document.createElement("DIV");
@@ -96,10 +97,13 @@ function autocomplete(inp, arr) {
   }
   
   /*An array containing all the country names in the world:*/
-  var countries= ["Amsterdam","Ambala","Chennai","Delhi","Dhaka","Lucknow","Pathankot","Prayagraj","Panipat","Patna","Shimla","San Diego"];
-  
-  /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), countries);
+  var cities= [
+ "Shanghai","Lagos", "Istanbul","Karachi","Mumbai","Moscow","Sao Paulo","Beijing",
+       "Guangzhou","Delhi","Lahore","Shenzhen","Seoul","Jakarta","Tianjin",
+     "Chennai","Tokyo","Cairo","Dhaka","Mexico City","Kinshasa","Bangalore","New York","London","Bangkok","Tehran","Dongguan","Ho Chi Minh City","Bogota","Lima","Hong Kong","Hanoi","Hyderabad","Wuhan","Rio de Janeiro","Foshan","Ahmedabad","Baghdad","Singapore","Shantou","Riyadh","Jeddah","Santiago","Saint Petersburg","Qalyubia","Chengdu","Alexandria", "Ankara","Chongqing","Kolkata","Xi'an","Surat","Johannesburg", "Nanjing","Dar es Salaam","Abidjan", "Harbin", "Zhengzhou", "Suzhou", "Sydney", "New Taipei City","Los Angeles", "Melbourne","Cape Town","Shenyang", "Yokohama", "Busan", "Hangzhou", "Quanzhou","Durban", "Casablanca","Algiers", "Berlin", "Nairobi", "Hefei","Kabul","Pyongyang", "Madrid","Ekurhuleni", "Pune","Addis Ababa","Changsha","Jaipur",  "Xuzhou","Wenzhou","Varanasi","Mathura","Dehradun","Srinagar","Paris","Munich","Brussels","The Hague","Ontario","Ohio","Venice","Ujjain","Utsunomiya"
+      ];
+  /*initiate the autocomplete function on the "myInput" element, and pass along the cities array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), cities);
 let x = document.getElementById("myInput");
       let y = document.getElementById("location");
       let z = document.getElementById("weather");
@@ -115,37 +119,18 @@ function getFormValue(e){
       //return promise
       .then((data) => data.json())
       .then((res) => {
-        console.log("Weather data", res);})
-
-      y
-
-
-      }
-
+        console.log("Weather data", res);
+        //x.innerText
+        y.innerText=`Temp of the day for ${getCityName} is ${(res.main.temp-273.15).toFixed(2)}deg Celcius`;
+        z.innerText=`Wind speed is ${res.wind.speed}m/sec`;
+        document.body.style.backgroundImage =
+      "url('https://source.unsplash.com/1600x900/?" +getCityName + "')";
+  })}
+        //z.innerText=``
     
-    //   function geolocation() {
-    //     if (navigator.geolocation) {
-    //       navigator.geolocation.getCurrentPosition(showPosition); //Callback function
-    //     } else {
-    //       x.innerText = "Geo Not supported";
-    //     }
-    //   }
-
-    //   function showPosition(data) {
-    //     console.log(data.coords.latitude);
-    //     console.log(data.coords.longitude);
-    //     let lat = data.coords.latitude;
-    //     let long = data.coords.longitude;
-    //     x.innerText = `Lat is ${lat} and Long is ${long}`;
-    //     //to generate api key and call => https://openweathermap.org/current
-
-         
-    //         y.innerText = `Temp of the day is ${res.main.temp}`;
-    //         z.innerText = `City name is ${res.name}`;
-    //         // console.log("Weather data", res.name);
-    //         // console.log("Weather data", res.sys.country);
-    //       });
-    //   }
-
-
-
+    // const url_two=`https://api.teleport.org/api/urban_areas/slug:paris/images/`;
+    // fetch(url_two,{method:"GET"})
+    //     .then((data)=>data.json())
+    //     .then((res)=>{
+    //       console.log("Image url data",res);
+    //     })      
